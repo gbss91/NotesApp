@@ -1,0 +1,29 @@
+<%#Menu - Reference: https://www.codeply.com/p/yRugA2FB3I%>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-auto bg-dark sticky-top">
+      <div class="d-flex flex-sm-column flex-row flex-nowrap bg-dark align-items-center sticky-top vh-100">
+        <a href="/" class="d-block p-3" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+          <%= image_tag("icon.png", id: "icon")%>
+        </a>
+        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+          <li class="nav-item ">
+            <a href="/notes" class="nav-link py-3 px-2 menu-icon" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Notes">
+              <i class="bi bi-view-list fs-2"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/notes/new" class="nav-link py-3 px-2 menu-icon" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="New">
+              <i class="bi bi-journal-plus fs-2"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="sign-out">
+          <a href="/users/sign_out" class="d-flex align-items-center justify-content-center p-3 link-secondary text-decoration-none">
+            <i class="bi bi-box-arrow-right h2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
