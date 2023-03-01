@@ -1,14 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Notes</h1>
-
-<div id="notes">
-  <% @notes.each do |note| %>
-    <%= render note %>
-    <p>
-      <%= link_to "Show this note", note %>
-    </p>
-  <% end %>
+<div class="row section-title">
+  <h1>Notes</h1>
 </div>
 
-<%= link_to "New note", new_note_path %>
+<% @notes.each do |note| %>
+  <%= link_to note_path(note.id), class: "note-link" do %>
+    <div  class="d-flex align-items-center note-box">
+      <div class="col-12 note-box-text ">
+        <div class="row">
+          <h5><%= note.title %></h5>
+          <p><%= note.body.truncate(150) %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+

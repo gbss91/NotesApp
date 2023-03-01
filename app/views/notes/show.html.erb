@@ -2,9 +2,16 @@
 
 <%= render @note %>
 
-<div>
-  <%= link_to "Edit this note", edit_note_path(@note) %> |
-  <%= link_to "Back to notes", notes_path %>
-
-  <%= button_to "Destroy this note", @note, method: :delete %>
+<div class="col-12">
+  <div class="row float-end">
+    <div class="col-md">
+      <%= link_to "Delete", @note, data: { turbo_method: :delete, turbo_confirm: 'Do you want to proceed?' }, class: "link-danger" %>
+    </div>
+    <div class="col-md">
+      <%= link_to "Edit", edit_note_path(@note), class: "btn btn-primary rounded-pill" %>
+    </div>
+  </div>
 </div>
+
+
+

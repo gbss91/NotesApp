@@ -19,9 +19,9 @@
           </li>
         </ul>
         <div class="sign-out">
-          <a href="/users/sign_out" class="d-flex align-items-center justify-content-center p-3 link-secondary text-decoration-none">
+          <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "d-flex align-items-center justify-content-center p-3 link-secondary text-decoration-none" do %>
             <i class="bi bi-box-arrow-right h2"></i>
-          </a>
+          <% end %>
         </div>
       </div>
     </div>

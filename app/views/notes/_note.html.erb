@@ -1,12 +1,8 @@
 <div id="<%= dom_id note %>">
-  <p>
-    <strong>Title:</strong>
-    <%= note.title %>
-  </p>
-
-  <p>
-    <strong>Body:</strong>
-    <%= note.body %>
-  </p>
-
+  <div class="row section-title">
+    <h1><%= note.title %></h1>
+  </div>
+  <div class="row">
+    <p><%= simple_format(note.body) %></p>
+  </div>
 </div>
