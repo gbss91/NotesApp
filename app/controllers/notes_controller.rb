@@ -7,7 +7,13 @@ class NotesController < ApplicationController
   end
 
   # GET /notes/1 or /notes/1.json
-  def show; end
+  def show
+    if @note.user_id == current_user.id
+      @note
+    else
+      redirect_to notes_path
+    end
+  end
 
   # GET /notes/new
   def new
@@ -58,7 +64,7 @@ class NotesController < ApplicationController
   private
 
   def set_note
-    @note = Note.where("id = #{params[:id]}").first
+    @note = Note.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
