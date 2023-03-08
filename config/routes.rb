@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   resources :notes
 
   authenticated :user do
-    root to: "notes#index", as: :search
+    root to: 'notes#index', as: :dashboard
   end
 
   devise_scope :user do
-    root to: "devise/sessions#new"
+    root to: 'devise/sessions#new'
   end
 end
