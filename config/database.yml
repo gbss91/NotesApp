@@ -5,8 +5,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: notesapp
-  password: NotesApp23
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
 
 # Development database
 development:
@@ -22,5 +22,5 @@ test:
 production:
   <<: *default
   database: NotesApp
-  username: NotesApp
-  password: <%= ENV["NOTESAPP_DATABASE_PASSWORD"] %>
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
