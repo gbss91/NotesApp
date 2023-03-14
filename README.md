@@ -11,7 +11,8 @@ NotesApp is running on Ruby 3.1.2 and Rails 7.0.4.
 1. To install all the dependencies run `bundle install`
 2. The application uses a PostgreSQL database. To setup the database run `rails db:setup` 
 3. Run the migrations with `rails db:migrate` 
-4. Add environment variables with your database credentials. 
+4. Add environment variables with your database credentials: `DB_USERNAME & DB_PASSWORD`
+
 
 
 

@@ -1,0 +1,42 @@
+<%#Sign Up view%>
+<div class="container d-flex justify-content-center align-items-center" id="sign-up-container">
+  <div class="col-4 sign-box text-center">
+
+    <h3>Sign up</h3>
+    <br>
+    <%= form_for(resource, as: resource_name, url:  user_registration_path, data: { turbo: false }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+
+      <div class="field form-group">
+        <%= f.text_field :first_name, class:"form-control", autofocus: true, placeholder: "First Name" %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.text_field :last_name, class:"form-control", autofocus: true, placeholder: "Last Name" %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email", placeholder: "Email" %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.password_field :password, class:"form-control", autocomplete: "new-password", placeholder: "Password (min 6 characters)"%>
+      </div>
+
+      <div class="field form-group">
+        <%= f.password_field :password_confirmation, class:"form-control", autocomplete: "new-password", placeholder: "Confirm Password"  %>
+      </div>
+
+      <br>
+      <div class="actions">
+        <%= f.submit "Sign up", class: "btn btn-primary rounded-pill"%>
+      </div>
+    <% end %>
+    <br>
+    <br>
+    <div class="sign-text">
+      <p>Already have an account? <%= link_to "Sign In", new_user_session_path, class: "link-simple" %></p>
+    </div>
+  </div>
+</div>
