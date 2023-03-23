@@ -17,6 +17,9 @@ RUN bundle install
 # Copy the Rails app into the image
 COPY . .
 
+ADD ./scripts/init.sql /docker-entrypoint-initdb.d/
+RUN chown postgres:postgres /docker-entrypoint-initdb.d/init.sql
+
 # Expose port 3000
 EXPOSE 3000
 
