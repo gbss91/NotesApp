@@ -4,10 +4,15 @@ services:
     image: postgres:14.2-alpine
     ports:
       - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
 
   app:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
       - "3000:3000"
     depends_on:
