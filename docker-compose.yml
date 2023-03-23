@@ -1,9 +1,10 @@
 version: '2'
 services:
   db:
-    image: postgres
-    environment:
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    image: postgres:14.2-alpine
+    ports:
+      - "5432:5432"
+
   app:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
@@ -11,5 +12,5 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    environment:
-      DATABASE_URL: postgres://$DB_USERNAME:$DB_PASSWORD@db:5432/NotesApp
+    volumes:
+      - .:/NotesApp
