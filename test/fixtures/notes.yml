@@ -1,9 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  title: Note 1
+  body: This is the first note
+  created_at: 2023-03-01 17:56:42.180394
+  updated_at: 2023-03-01 17:56:42.180394
+  user_id: 1
 
 two:
-  title: MyString
-  body: MyText
+  title: Note 2
+  body: This is the second note
+  created_at: 2023-03-01 17:56:42.180394
+  updated_at: 2023-03-01 17:56:42.180394
+  user_id: 2

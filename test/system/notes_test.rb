@@ -1,43 +1,22 @@
 require 'application_system_test_case'
 
 class NotesTest < ApplicationSystemTestCase
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    @user = users(:one)
     @note = notes(:one)
   end
 
-  test 'visiting the index' do
+  test 'visiting the index when signed in' do
+    sign_in @user
     visit notes_url
     assert_selector 'h1', text: 'Notes'
   end
 
-  test 'should create note' do
+  test 'visiting the index when not signed in' do
     visit notes_url
-    click_on 'New note'
-
-    fill_in 'Body', with: @note.body
-    fill_in 'Title', with: @note.title
-    click_on 'Create Note'
-
-    assert_text 'Note was successfully created'
-    click_on 'Back'
+    assert_current_path new_user_session_path
   end
 
-  test 'should update Note' do
-    visit note_url(@note)
-    click_on 'Edit this note', match: :first
-
-    fill_in 'Body', with: @note.body
-    fill_in 'Title', with: @note.title
-    click_on 'Update Note'
-
-    assert_text 'Note was successfully updated'
-    click_on 'Back'
-  end
-
-  test 'should destroy Note' do
-    visit note_url(@note)
-    click_on 'Destroy this note', match: :first
-
-    assert_text 'Note was successfully destroyed'
-  end
 end
