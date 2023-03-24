@@ -24,5 +24,3 @@ test:
 production:
   <<: *default
   database: NotesApp
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
