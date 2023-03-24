@@ -31,5 +31,5 @@
 /config/master.key
 
 # Ignore env file
-.env
+/.env
 
